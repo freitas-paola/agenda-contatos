@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+import variables from '../../styles/variables'
 
 type Props = {
-  open: boolean
+  closed: boolean
 }
 
 export const ContactMain = styled.div`
@@ -20,12 +21,16 @@ export const IconBox = styled.button`
   svg {
     width: 1.4rem;
     height: 1.4rem;
-    stroke: #000;
-    cursor: pointer;
+    stroke: ${variables.textColor};
     margin: 0;
+  }
+`
+export const IconBoxButton = styled(IconBox)`
+  svg {
+    cursor: pointer;
 
     &:hover {
-      stroke: red;
+      stroke: ${variables.hover};
     }
   }
 `
@@ -34,7 +39,7 @@ export const ImgBox = styled.div`
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  background-color: #000;
+  background-color: ${variables.buttonColor};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,12 +47,12 @@ export const ImgBox = styled.div`
   p {
     font-size: 1.3rem;
     font-weight: bold;
-    color: #fff;
+    color: ${variables.backgroundColor};
   }
 `
 
 export const ContactInfo = styled.div<Props>`
-  display: ${(props) => (props.open ? 'none' : 'grid')};
+  display: ${(props) => (props.closed ? 'none' : 'grid')};
   grid-template-columns: 2rem 1fr;
   align-items: center;
   row-gap: 1rem;

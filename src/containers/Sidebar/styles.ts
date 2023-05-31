@@ -1,22 +1,13 @@
 import styled from 'styled-components'
-
-type Props = {
-  open: boolean
-}
+import variables from '../../styles/variables'
 
 export const SideBarContainer = styled.div`
   padding: 1rem 1rem 0 1rem;
-  background-color: orange;
+  background-color: ${variables.sidebarBackground};
   height: 100vh;
-`
 
-export const Form = styled.form<Props>`
-  margin-top: 1rem;
-  display: ${(props) => (props.open ? 'none' : 'flex')};
-  flex-direction: column;
-  gap: 1rem;
-
-  button {
-    margin-right: 1rem;
+  @media (max-width: 768px) {
+    height: 100%;
+    padding-bottom: 1rem;
   }
 `
