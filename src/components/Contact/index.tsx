@@ -85,13 +85,13 @@ export const Contact = ({
       <S.ContactInfo closed={isClosed}>
         <S.IconBox as="p">{I.emailIcon}</S.IconBox>
         <Input
-          defaultValue={email}
+          value={email}
           onChange={(e) => setEmail(e.target.value)}
           disabled={!isEditing}
         />
         <S.IconBox as="p">{I.telIcon}</S.IconBox>
         <Input
-          defaultValue={tel}
+          value={tel}
           onChange={(e) => setTel(e.target.value)}
           disabled={!isEditing}
         />
